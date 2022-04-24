@@ -1,4 +1,4 @@
-
+const User = require('../models/user.js');
 
 User.query()
 	.select('id', 'firstName')
