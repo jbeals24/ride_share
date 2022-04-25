@@ -1,4 +1,6 @@
-const User = require('../models/user.js');
+//const knex =require('knex'); 
+const {User} = require('../models/user.js');
+const {knex} = require('../db.js');
 
 User.query()
 	.select('id', 'firstName')
