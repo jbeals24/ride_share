@@ -1,4 +1,4 @@
-const {User} = require('../models/location.js');
+const {Location} = require('../models/location.js');
 const {knex} = require('../db.js');
 
 Location.query()
