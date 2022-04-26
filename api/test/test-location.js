@@ -18,7 +18,6 @@ async function stateWithLocation (){
 		const locations = await Location.query()
 			.select('id', 'name') 
 			.where('id', 1)
-		//console.log(locations);
 		const st = await locations 
 			.$relatedQuery('state');
 			console.log(locations);

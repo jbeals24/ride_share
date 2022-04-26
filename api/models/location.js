@@ -1,5 +1,5 @@
 const {Model} = require('objection');
-
+const {State} = require('../models/state.js');
 class Location extends Model {
 	static get tableName(){
 		return 'location';
@@ -10,8 +10,8 @@ class Location extends Model {
 				relation: Model.BelongsToOneRelation,
 				modelClass: State,
 				join: {
-					from: 'location.stateId',
-					to: 'state.stateId'
+					from: 'location.state',
+					to: 'state.abbreviation'
 				}
 			}
 		}
