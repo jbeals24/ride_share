@@ -16,11 +16,13 @@ Location.query()
 async function stateWithLocation (){
 	try {
 		const locations = await Location.query()
-			.where('id', 1);
-		console.log(locations);
+			.select('id', 'name') 
+			.where('id', 1)
+		//console.log(locations);
 		const st = await locations 
 			.$relatedQuery('state');
-		console.log(st);
+			console.log(locations);
+			console.log(st);
 		
 	}
 	catch (err){
