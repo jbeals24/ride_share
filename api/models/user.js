@@ -1,7 +1,6 @@
-/*
 const {Model} = require('objection');
 const {Driver} = require('../models/driver');
-const {Passenger} = require('../models/passenger');
+//const {Passenger} = require('../models/passenger');
 const {Ride} = require('../models/ride');
 
 class User extends Model {
@@ -17,24 +16,23 @@ class User extends Model {
 				from: 'user.id',
 				to: 'driver.userId'
 			}
-		}Ride;{
+		},Ride:{
 			relation: Model.HasManyRelation,
 			modelClass: ride,
-			join;{
+			join:{
 				from: 'user.id',
 				through:{
 					from: 'passenger.userId',
 					to: 'passenger.rideId',
-				}to: 'ride.id',
+				},to: 'ride.id',
 			}
 		}
 	}
 	}
 }
-const Exports = module.exports = {};
-*/
+module.exports = {User}
 
-
+/*
 const {Model} = require('objection');
 
 class User extends Model {
@@ -44,5 +42,4 @@ class User extends Model {
 }
 
 module.exports = {User};
-
-//const Exports = module.exports = {};
+*/
