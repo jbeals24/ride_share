@@ -15,6 +15,12 @@ Location.query()
 */
 async function stateWithLocation (){
 	try {
+		// https://stackoverflow.com/questions/60512031/in-objection-js-whats-the-benefit-of-setting-up-relationmappings
+		// https://vincit.github.io/objection.js/guide/query-examples.html#eager-loading
+		const locationWithState = await Location.query().limit(1).withGraphFetched('stateName')
+		console.log(locationWithState)
+
+		/*
 		const locations = await Location.query()
 			.select('id', 'name') 
 			.where('id', 1)
@@ -22,7 +28,7 @@ async function stateWithLocation (){
 			.$relatedQuery('state');
 			console.log(locations);
 			console.log(st);
-		
+		*/
 	}
 	catch (err){
 		console.log(`error: ${err}`);

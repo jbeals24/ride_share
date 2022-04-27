@@ -6,7 +6,7 @@ class Location extends Model {
 	}
 	static get relationMappings() {
 		return {
-			state: {
+			stateName: {
 				relation: Model.BelongsToOneRelation,
 				modelClass: State,
 				join: {
