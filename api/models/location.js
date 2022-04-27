@@ -1,7 +1,7 @@
-const {Model} = require('objection');
-const {State} = require('../models/state.js');
+const { Model } = require('objection');
+const { State } = require('../models/state.js');
 class Location extends Model {
-	static get tableName(){
+	static get tableName() {
 		return 'location';
 	}
 	static get relationMappings() {
@@ -19,4 +19,4 @@ class Location extends Model {
 }
 
 
-module.exports = {Location};
+module.exports = { Location };

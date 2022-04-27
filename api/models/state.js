@@ -1,15 +1,13 @@
-const {Model} = require('objection');
-const {Location} = require("../models/location")
-
+const { Model } = require('objection');
 class State extends Model {
-        static get tableName(){
-                return 'state';
-        }
+	static get tableName() {
+		return 'state';
+	}
 	static get relationMappings() {
 		return {
 			stateName: {
 				relation: Model.BelongsToOneRelation,
-				modelClass: Location,
+				modelClass: __dirname + '/Location',
 				join: {
 					from: 'state.abbreviation',
 					to: 'location.state'
@@ -18,5 +16,5 @@ class State extends Model {
 		}
 	}
 }
-module.exports = {State};
+module.exports = { State };
 
