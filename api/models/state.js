@@ -7,7 +7,7 @@ class State extends Model {
 	static get relationMappings() {
 		return {
 			stateName: {
-				relation: Model.BelongsToOneRelation,
+				relation: Model.HasManyRelation,
 				modelClass: __dirname + '/Location',
 				join: {
 					from: 'state.abbreviation',
