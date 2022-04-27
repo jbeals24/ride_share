@@ -1,5 +1,6 @@
 const { Model } = require('objection');
 const { State } = require('../models/state.js');
+
 class Location extends Model {
 	static get tableName() {
 		return 'location';
