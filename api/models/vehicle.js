@@ -16,16 +16,24 @@ class Vehicle extends Model {
                                         from: 'vehicle.licenseState',
                                         to: 'state.abbreviation'
                                 }
-                        }
-			,vType: {
+                        },
+			vType: {
                                 relation: Model.BelongsToOneRelation,
                                 modelClass: VehicleType,
                                 join: {
                                         from: 'vehicle.vehicleTypeId',
                                         to: 'vehycleType.id'
                                 }
-                        }
+                        },
+			rideId: {
+				relation: Model.BelongsToOneRelation,
+				modelClass: rideId,
+				join:{
+					from: 'vehicle.id',
+					to: 'ride.vehicleId'
+				}
 
+			}
 
                 }
         }

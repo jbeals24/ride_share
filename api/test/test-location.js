@@ -9,6 +9,7 @@ async function stateWithLocation() {
 		// https://vincit.github.io/objection.js/guide/query-examples.html#eager-loading
 		const locationWithState = await Location.query().limit(1).withGraphFetched('stateName')
 		console.log(locationWithState)
+	}
 	catch (err) {
 		console.log(`error: ${err}`);
 	}
