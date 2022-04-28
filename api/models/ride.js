@@ -8,6 +8,14 @@ class Ride extends Model {
         }
 	static get relationMappings(){
 		return{
+			vehicleId:{
+                                relation:Model.BelongsToOneRelation,
+                                modelClass: Vehicle,
+                                join:{
+                                        from: 'ride.VehicleId',
+                                        to: 'vehicle.id'
+                                }
+                        },
 			User:{
 				relation: Model.BelongsToOneRelation,
 				modelClass: __dirname + '/User',
@@ -16,7 +24,7 @@ class Ride extends Model {
 					through: {
 						from: 'passenger.rideId',
 						to: 'passenger.userId',
-					}
+					},
 					to: 'user.id'
 				}
 			},
@@ -34,14 +42,6 @@ class Ride extends Model {
 				join: {
 					from: 'ride.toLocationId',
 					to: 'location.id'
-				}
-			}
-			vehicleId:{
-				relation:Model.HasManyRelation,
-				model: __dirname + '/Vehicle',
-				join:{
-					from: 'ride.vehicleId',
-					to: 'vehicle.id'
 				}
 			}
 		}

@@ -1,6 +1,7 @@
 const {Model} = require('objection');
 const { State } = require('../models/state.js'); 
 const { VehicleType } = require('../models/vehicleType.js');
+const { Ride } = require('../models/ride.js');
 
 
 class Vehicle extends Model {
@@ -22,18 +23,20 @@ class Vehicle extends Model {
                                 modelClass: VehicleType,
                                 join: {
                                         from: 'vehicle.vehicleTypeId',
-                                        to: 'vehycleType.id'
+                                        to: 'vehicleType.id'
                                 }
                         },
-			rideId: {
-				relation: Model.BelongsToOneRelation,
-				modelClass: rideId,
-				join:{
-					from: 'vehicle.id',
-					to: 'ride.vehicleId'
-				}
+			 vehicleId: {
+                                relation: Model.HasManyRelation,
+                                modelClass: __dirname + '/Ride',
+                                join: {
+                                        from: 'vehicle.id',
+                                        to: 'ride.vehicleId'
+                                }
+                        }
 
-			}
+
+			
 
                 }
         }
