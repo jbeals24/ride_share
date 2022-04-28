@@ -1,7 +1,12 @@
 const {Model} = require('objection');
-const {Driver} = require('../models/driver');
-//const {Passenger} = require('../models/passenger');
-const {Ride} = require('../models/ride');
+const {Driver} = require('../models/driver.js');
+const {Passenger} = require('../models/passenger.js');
+const {Ride} = require('../models/ride.js');
+const {Vehicle} = require ('../models/vehicle.js');
+const {VehicleType} = require('../models/vehicleType.js');
+const {State} = require('../models/state.js');
+const {knex} = require('../db.js');
+const {Location} = require('../models/location.js');
 
 class User extends Model {
 	static get tableName() {
@@ -36,15 +41,3 @@ module.exports = {User};
 //Would this not be driver and passenger?
 //user and driver may be one-one relation
 
-
-/*
-const {Model} = require('objection');
-
-class User extends Model {
-	static get tableName(){
-		return 'user';
-	}
-}
-
-module.exports = {User};
-*/

@@ -14,7 +14,23 @@ class Location extends Model {
 					from: 'location.state',
 					to: 'state.abbreviation'
 				}
-			}
+			},
+			toLocation:{
+				relation: Model.HasManyRelation,
+				modelClass: __dirname + '/Location',
+				join:{
+					from: 'location.id',
+					to: 'ride.toLocationId',
+				}
+			},
+			fromLocation:{
+                                relation: Model.HasManyRelation,
+                                modelClass: __dirname + '/Location',
+                                join:{
+                                        from: 'location.id',
+                                        to: 'ride.fromLocationId',
+                                }
+			} 
 		}
 	}
 }
