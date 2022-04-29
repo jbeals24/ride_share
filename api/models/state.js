@@ -13,6 +13,22 @@ class State extends Model {
 					from: 'state.abbreviation',
 					to: 'location.state'
 				}
+			},
+			stateName: {
+				relation: Model.HasManyRelation,
+				modelClass: __dirname + '/Vehicle',
+				join: {
+					from: 'state.abbreviation',
+					to: 'vehicle.licenseState'
+				}
+			}
+			driverState: {
+				relation: Model.HasManyRelation,
+				modelClass: __dirname + '/Driver',
+				join: {
+					from: 'state.abbreviation',
+					to: 'driver.licenseState'
+				}
 			}
 		}
 	}
