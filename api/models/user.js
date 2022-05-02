@@ -9,12 +9,24 @@ class User extends Model {
                 return {
 			driverUser: {
                                 relation: Model.HasManyRelation,
-                                modelClass: __dirname + '/Driver',
+                                modelClass: Driver,
                                 join: {
                                         from: 'user.id',
                                         to: 'driver.userId'
                                 }
-                        }
+                        },
+			rideUser:{
+				relation: Model.ManyToManyRelation,
+				modelClass: Ride,
+				join:{
+					from: 'user.id',
+					through:{
+						from: 'passenger.userId',
+						to: 'passenger.rideId'
+					}
+					to: 'ride.id'
+				}
+			}
 		}
 	}
 }

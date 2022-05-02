@@ -6,7 +6,7 @@ async function driversVehicles() {
         try{
                 const dv = await driver.query()
 		
-                console.log(ct)
+                console.log(dv)
 
         }
         catch(err) {

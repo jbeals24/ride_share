@@ -34,6 +34,18 @@ class Ride extends Model {
 					to: 'location.id'
 				}
 			}
+			driversId: {
+				relation: Model.ManyToManyRelation,
+				modelClass: Ride,
+				join:{
+					from: 'ride.id',
+					through:{
+						from: 'drivers.rideId',
+						to: 'drivers.driverId'
+					}
+					to: 'driver.id'
+				}
+			}
 		}
 	}
 }

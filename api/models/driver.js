@@ -38,6 +38,18 @@ class Driver extends Model {
 					to: 'vehicle.id'
 				}
 			}
+			driversId: {
+				relation: Model.ManyToManyRelation,
+				modelClass: Drivers,
+				join:{
+					from: 'driver.id'
+					through: {
+						from: 'drivers.driverId',
+						to: 'drivers.rideId'
+					}
+					to: 'ride.id'
+				}
+			}
 
 		}
 
@@ -46,50 +58,5 @@ class Driver extends Model {
 }
 
 module.exports = {Driver};
-
-
-			/*
-			User:{
-				relation: Model.BelongsToOneRelation,
-				modelClass: __dirname + '/user',
-				join:{
-					from: 'driver.userId',
-					to: 'user.id'
-				}
-			},
-			State:{
-				relation: Model.BelongsToOneRelation,
-				modelClass: __dirname + '/state',
-				join:{
-					from: 'driver.licenseState',
-					to: 'state.abbreviation'
-				}
-			},
-			Vehicle:{
-				relation: Model.HasManyRelation,
-				modelClass: __dirname + '/vehicle',
-				join:{
-					from: 'driver.id',
-				through:{
-					from: 'authorization.driverId',
-					to: 'authorization.vehicleId'
-				},
-					to: 'vehicle.id'
-				}
-			},
-			Ride:{
-				relation: Model.HasManyRelation,
-				modelClass: __dirname + '/ride',
-				join:{
-					from: 'driver.id',
-				through:{
-					from: 'drivers.driverId',
-					to: 'drivers.rideId'
-				},
-					to: 'ride.id'
-				}
-			}
-			*/
-	
 
 
