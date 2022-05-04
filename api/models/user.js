@@ -36,7 +36,4 @@ class User extends Model {
 
 module.exports = {User};
 
-//COMMENTS
-//Would this not be driver and passenger?
-//user and driver may be one-one relation
 

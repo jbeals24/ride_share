@@ -32,11 +32,19 @@ class Vehicle extends Model {
                                         from: 'vehicle.id',
                                         to: 'ride.vehicleId'
                                 }
-                        }
-
-
-			
-
+                        },
+			driverId:{
+				relation: Model.ManyToManyRelation,
+				modelClass: driverId,
+				join:{
+					from: 'vehicle.id',
+					through:{
+						from: 'authorization.vehicleId',
+						to: 'authorization.driverId'
+					},
+					to: 'driver.id'
+				}
+			}
                 }
         }
 }
