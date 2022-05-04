@@ -21,7 +21,7 @@ class State extends Model {
 					from: 'state.abbreviation',
 					to: 'vehicle.licenseState'
 				}
-			}
+			},
 			driverState: {
 				relation: Model.HasManyRelation,
 				modelClass: __dirname + '/Driver',

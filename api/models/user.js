@@ -1,5 +1,7 @@
 const {Model} = require('objection');
 const {knex} = require('../db.js');
+const { Driver } = require('../models/driver.js');
+const { Ride } = require('../models/ride.js');
 
 class User extends Model {
 	static get tableName() {
@@ -23,7 +25,7 @@ class User extends Model {
 					through:{
 						from: 'passenger.userId',
 						to: 'passenger.rideId'
-					}
+					},
 					to: 'ride.id'
 				}
 			}

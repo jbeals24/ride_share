@@ -3,12 +3,14 @@ const {knex} = require('../db.js');
 //const {User} = require('../models/user.js');
 const {Vehicle} = require('../models/vehicle.js');
 const {Location} = require('../models/location.js');
+const {Driver} = require('../models/driver.js');
 
 class Ride extends Model {
         static get tableName(){
                 return 'ride';
         }
 	 static get relationMappings() {
+		 
                 return {
                         vRide: {
                                 relation: Model.BelongsToOneRelation,
@@ -33,16 +35,16 @@ class Ride extends Model {
 					from: 'ride.toLocationId',
 					to: 'location.id'
 				}
-			}
+			},
 			driversId: {
 				relation: Model.ManyToManyRelation,
-				modelClass: Ride,
+				modelClass: Driver,
 				join:{
 					from: 'ride.id',
 					through:{
 						from: 'drivers.rideId',
 						to: 'drivers.driverId'
-					}
+					},
 					to: 'driver.id'
 				}
 			}

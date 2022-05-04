@@ -15,4 +15,16 @@ async function driversVehicles() {
 
 }
 
+async function driverState() {
+        try{
+                const ds = await driver.query()
+
+                console.log(ds)
+
+        }
+        catch(err) {
+                console.log(`error: ${err}`);
+        }
+
+}
 

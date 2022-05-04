@@ -8,7 +8,7 @@ const {Passenger} = require('../models/passenger.js');
 
 async function userWithRide (){
 	try {
-		const userAndRide= await User.query().limit(1).withGraphFetched('rideId')
+		const userAndRide= await User.query().limit(1).withGraphFetched('rideUser')
 		console.log(userAndRide)
 	}
 	catch (err){

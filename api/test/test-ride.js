@@ -3,6 +3,7 @@ const { knex } = require('../db.js');
 const { Ride } = require('../models/ride.js');
 const { VehicleType } = require('../models/vehicleType.js');
 const { Location } = require('../models/location.js');
+const { Driver } = require('../models/driver.js');
 
 
 async function rideVehicle() {
