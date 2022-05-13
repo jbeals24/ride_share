@@ -1,6 +1,7 @@
 INSERT INTO public."authorization" ("driverId", "vehicleId") VALUES (1, 1);
 
 INSERT INTO public.driver (id, "userId", "licenseState", "licenseNumber") VALUES (1, 1, 'IN', '1234');
+INSERT INTO public.driver (id, "userId", "licenseState", "licenseNumber") VALUES (2, 2, 'MN', '2736');
 
 INSERT INTO public.drivers ("driverId", "rideId") VALUES (1, 1);
 
